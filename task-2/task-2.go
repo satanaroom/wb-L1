@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math"
-	"runtime"
 	"sync"
 )
 
@@ -12,8 +11,6 @@ func PowCount(in int, wg *sync.WaitGroup) {
 	// Отложенный вызов метода, который уменьшает счетчик горутин
 	defer wg.Done()
 	fmt.Printf("Pow of %d: %d\n", in, int(math.Pow(float64(in), float64(in))))
-	// Уступает процессор, позволяя запускать другие горутины.
-	runtime.Gosched()
 }
 
 func main() {
