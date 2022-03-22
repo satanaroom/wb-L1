@@ -87,13 +87,13 @@ func main() {
 
 	for i := 0; i < 5; i++ {
 		wg1.Add(1)
-		go func() {
+		go func(i int) {
 			defer wg1.Done()
 			for val := range ch3 {
 				fmt.Println("value from channel:", val)
 			}
 			fmt.Println("goroutine", i, "finished")
-		}()
+		}(i)
 	}
 	wg1.Wait()
 	fmt.Printf("\t\tThird option finished\n")
