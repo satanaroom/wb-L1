@@ -1,5 +1,7 @@
 package main
 
+/*Реализовать собственную функцию sleep.*/
+
 import (
 	"fmt"
 	"time"

@@ -1,5 +1,7 @@
 package main
 
+/*Удалить i-ый элемент из слайса.*/
+
 import "fmt"
 
 func main() {
